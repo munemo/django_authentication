@@ -20,5 +20,6 @@ from my_app import views
 urlpatterns = [
     url(r'^$', views.index, name="index"),
     url(r'^admin/', admin.site.urls),
+    url(r'^logout/$', views.user_logout, name="logout"),
     url(r'^my_app/', include('my_app.urls'))
 ]

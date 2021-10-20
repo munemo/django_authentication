@@ -13,7 +13,12 @@
                 <li><a class="navbar-brand" href="{% url 'index'%}">Lexicon</a></li>
                 <li><a class="nav-link" href="{% url 'admin:index' %}">Admin</a></li>
                 <li><a class="nav-link" href="{% url 'my_app:register' %}">Register</a></li>
+                
+                {%if user.is_authenticated%}
+                        <li><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+                {%else%}
                 <li><a class="nav-link" href="{% url 'my_app:signin' %}">Sign In</a></li>
+                {%endif%}
 
             </ul>
         </div>
@@ -25,5 +30,20 @@
         {% endblock %}
 
     </div>
+    <footer class="page-footer font-small purple pt-4 fixed-bottom">
+
+        <!-- Footer Links -->
+       
+            <!-- Grid column -->
+    
+           
+        <!-- Footer Links -->
+    
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2021 Copyright John Chimbani
+        </div>
+        <!-- Copyright -->
+    
+      </footer>
 </body>
 </html>
